@@ -1,0 +1,132 @@
+# Copyright (C) 2015 Looks Awesome
+# This file is distributed under the same license as the Flow-Flow package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Flow-Flow 1.3.6\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/flow-flow\n"
+"POT-Creation-Date: 2015-06-30 14:42+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-06-30 16:05+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Team Name <team@example.com>\n"
+"X-Generator: Poedit 1.8.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: fi_FI\n"
+
+#: includes/FlowFlow.php:466
+msgid "All"
+msgstr "Kaikki"
+
+#: includes/FlowFlow.php:467
+msgid "Search"
+msgstr "Hae"
+
+#: includes/FlowFlow.php:468
+msgid "Expand"
+msgstr "Suurenna"
+
+#: includes/FlowFlow.php:469
+msgid "Collapse"
+msgstr "Pienennä"
+
+#: includes/FlowFlow.php:470
+msgid "Posted on"
+msgstr "Julkaistu"
+
+#: includes/FlowFlow.php:471
+msgid "Show more"
+msgstr "Näytä Lisää"
+
+#: includes/FlowFlow.php:474 includes/social/FFFeedUtils.php:29
+msgid "Yesterday"
+msgstr "Eilen"
+
+#: includes/FlowFlow.php:475 includes/social/FFFeedUtils.php:48
+msgid "s"
+msgstr "s"
+
+#: includes/FlowFlow.php:476 includes/social/FFFeedUtils.php:48
+msgid "m"
+msgstr "min"
+
+#: includes/FlowFlow.php:477 includes/social/FFFeedUtils.php:48
+msgid "h"
+msgstr "t"
+
+#: includes/FlowFlow.php:478 includes/social/FFFeedUtils.php:55
+msgid "ago"
+msgstr "sitten"
+
+#: includes/FlowFlow.php:480
+msgid "Jan"
+msgstr "Tammikuu"
+
+#: includes/FlowFlow.php:480
+msgid "Feb"
+msgstr "Helmikuu"
+
+#: includes/FlowFlow.php:480
+msgid "March"
+msgstr "Maaliskuu"
+
+#: includes/FlowFlow.php:481
+msgid "April"
+msgstr "Huhtikuu"
+
+#: includes/FlowFlow.php:481
+msgid "May"
+msgstr "Toukokuu"
+
+#: includes/FlowFlow.php:481
+msgid "June"
+msgstr "Kesäkuu"
+
+#: includes/FlowFlow.php:482
+msgid "July"
+msgstr "Heinäkuu"
+
+#: includes/FlowFlow.php:482
+msgid "Aug"
+msgstr "Elokuu"
+
+#: includes/FlowFlow.php:482
+msgid "Sept"
+msgstr "Syyskuu"
+
+#: includes/FlowFlow.php:483
+msgid "Oct"
+msgstr "Lokaku"
+
+#: includes/FlowFlow.php:483
+msgid "Nov"
+msgstr "Marraskuu"
+
+#: includes/FlowFlow.php:483
+msgid "Dec"
+msgstr "Joulukuu"
+
+#: includes/FlowFlow.php:486
+msgid "Navigate with arrow keys"
+msgstr "Navigoi nuolilla"
+
+#. Plugin Name of the plugin/theme
+msgid "Flow-Flow"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "flow.looks-awesome.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Awesome social streams on your site"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Looks Awesome"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "looks-awesome.com"
+msgstr ""
