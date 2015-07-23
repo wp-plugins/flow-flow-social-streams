@@ -8,7 +8,7 @@ Requires at least: 3.6
 Tested up to: 4.2.2
 Stable tag: 1.0
 
-With Flow-Flow Social Streams you can display your social hub of Facebook, Twitter and Instagram posts in beautiful responsive grid.
+With Flow-Flow Social Streams you can display your social hub in awesome responsive grid.
 
 == Description ==
 
@@ -39,7 +39,7 @@ Upgrade to PRO! [Check out comparison table](http://www.social-streams.com#prici
 
 = PRO version features =
 * Support services
-* More feeds to stream (14 networks total including Pinterest, Linkedin, Tumblr, Soundcloud etc plus WordPress posts and RSS feeds)
+* More feeds to stream (total 14 networks including Pinterest, Linkedin, Tumblr, Soundcloud etc plus WordPress posts and RSS feeds)
 * Lot more layouts and design options
 * Admin filtering rules for feeds (excluding by words, usernames, URLs)
 * Compact mode for sidebars
