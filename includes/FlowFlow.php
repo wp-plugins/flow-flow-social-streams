@@ -34,7 +34,7 @@ class FlowFlow {
 	 *
 	 * @var     string
 	 */
-	const VERSION = '1.3.13';
+	const VERSION = '1.0.0';
 
 	/**
 	 *
@@ -49,8 +49,8 @@ class FlowFlow {
 	 *
 	 * @var      string
 	 */
-	public static $PLUGIN_SLUG = 'flow-flow';
-	public static $PLUGIN_SLUG_DOWN = 'flow_flow';
+	public static $PLUGIN_SLUG = 'flow-flow-social-streams';
+	public static $PLUGIN_SLUG_DOWN = 'flow_flow_social_streams';
 
 	protected static $instance = null;
 	/** @return FlowFlow|null */
