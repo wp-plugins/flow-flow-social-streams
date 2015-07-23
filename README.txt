@@ -115,10 +115,16 @@ Plugin is distributed "as is" and doesn't contain support services. However it c
 
 == Changelog ==
 
+= Version 1.0.1 =
+* Fix for plugin slug that prevents 1.0.0 from functioning
+
 = Version 1.0.0 =
 * initial release
 
 == Upgrade Notice ==
+
+= Version 1.0.1 =
+* Fix for plugin slug that prevents 1.0.0 from functioning
 
 = Version 1.0.0 =
 * initial release
