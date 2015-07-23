@@ -8,17 +8,15 @@ Requires at least: 3.6
 Tested up to: 4.2.2
 Stable tag: 1.0
 
-With Flow-Flow Social Streams you can display your social hub (Facebook, Twitter, Instagram) in beautiful responsive grid.
+With Flow-Flow Social Streams you can display your social hub of Facebook, Twitter and Instagram posts in beautiful responsive grid.
 
 == Description ==
 
-= Overview =
-
-Make any combinations of social feeds with Flow-Flow to show posts in masonry grid. For example, you can have 5 Facebook pages, 5 Twitter accounts and 5 Instagram in one stream. 
+Make any combinations of social feeds with Flow-Flow and show posts in masonry grid on any page of your site. For example, you can have 5 Facebook pages, 5 Twitter accounts and 5 Instagram in one stream.
 
 Smart caching with server task allows to deliver content blazingly fast without long page loading. It’s especially crucial when many networks are pulled or you have big traffic. It’s great to use this plugin for streaming your news, photos, reviews and any other content you can imagine!
 
-Plugin doesn’t expose your private details (like tokens, app IDs and app secrets) to browser so we provide 100% security for any sensitive data.
+Plugin doesn't expose your private details (like tokens, app IDs and app secrets) to browser so we provide 100% security for any sensitive data.
 
 Upgrade to PRO! [Check out comparison table](http://www.social-streams.com#pricing "Flow-Flow demo")
 
@@ -40,6 +38,7 @@ Upgrade to PRO! [Check out comparison table](http://www.social-streams.com#prici
 * Well documented
 
 = PRO version features =
+* Support services
 * More feeds to stream (14 networks total including Pinterest, Linkedin, Tumblr, Soundcloud etc plus WordPress posts and RSS feeds)
 * Lot more layouts and design options
 * Admin filtering rules for feeds (excluding by words, usernames, URLs)
@@ -52,7 +51,7 @@ Upgrade to PRO! [Check out comparison table](http://www.social-streams.com#prici
 * Database snapshots
 * Admin posts approval system (soon!)
 
-
+Upgrade to PRO! [Check out comparison table](http://www.social-streams.com#pricing "Flow-Flow demo")
 
 == Installation ==
 
