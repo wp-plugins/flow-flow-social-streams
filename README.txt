@@ -6,7 +6,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
 Tags: ajax, facebook, facebook feed, facebook posts, grid, hashtag, instagram feed, instagram posts, social, social board, social feed, social grid, social hub, social stream, stream, twitter, twitter feed, tweets, masonry grid
 Requires at least: 3.6
 Tested up to: 4.2.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 
 With Flow-Flow Social Streams you can display your social hub in awesome responsive grid.
 
@@ -115,6 +115,9 @@ Plugin is distributed "as is" and doesn't contain support services. However it c
 
 == Changelog ==
 
+= Version 1.0.2 =
+* Fix for settings slug name that prevents creating/editing streams
+
 = Version 1.0.1 =
 * Fix for plugin slug that prevents 1.0.0 from functioning
 
@@ -122,6 +125,9 @@ Plugin is distributed "as is" and doesn't contain support services. However it c
 * initial release
 
 == Upgrade Notice ==
+
+= Version 1.0.2 =
+* Fix for settings slug name that prevents creating/editing streams
 
 = Version 1.0.1 =
 * Fix for plugin slug that prevents 1.0.0 from functioning
