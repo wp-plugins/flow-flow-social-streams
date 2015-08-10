@@ -3,10 +3,10 @@ Contributors: looks_awesome
 Donate link: http://looks-awesome.com/
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
-Tags: ajax, facebook, facebook feed, facebook posts, grid, hashtag, instagram feed, instagram posts, social, social board, social feed, social grid, social hub, social stream, stream, twitter, twitter feed, tweets, masonry grid
+Tags: ajax, facebook, facebook feed, pinterest, pinterest feed, facebook posts, grid, hashtag, instagram feed, instagram posts, social, social board, social feed, social grid, social hub, social wall, social stream, stream, twitter, twitter feed, tweets, masonry grid
 Requires at least: 3.6
-Tested up to: 4.2.2
-Stable tag: 1.0.2
+Tested up to: 4.2.3
+Stable tag: 1.0.3
 
 With Flow-Flow Social Streams you can display your social hub in awesome responsive grid.
 
@@ -22,7 +22,7 @@ Upgrade to PRO! [Check out comparison table](http://www.social-streams.com#prici
 
 = Features =
 
-* 3 biggest social networks (Facebook, Twitter, Instagram)
+* 4 biggest social networks (Facebook, Twitter, Instagram, Pinterest)
 * Cross browser (IE9+ and Other Modern Browsers)
 * Smart caching
 * AJAX loading and PageSpeed optimized
@@ -39,7 +39,7 @@ Upgrade to PRO! [Check out comparison table](http://www.social-streams.com#prici
 
 = PRO version features =
 * Support services
-* More feeds to stream (total 14 networks including Pinterest, Linkedin, Tumblr, Soundcloud etc plus WordPress posts and RSS feeds)
+* More feeds to stream (total 14 networks including YouTube, Linkedin, Tumblr, Soundcloud, Vine, Dribbble, Flickr etc plus WordPress posts and RSS feeds)
 * Lot more layouts and design options
 * Admin filtering rules for feeds (excluding by words, usernames, URLs)
 * Compact mode for sidebars
@@ -115,6 +115,9 @@ Plugin is distributed "as is" and doesn't contain support services. However it c
 
 == Changelog ==
 
+= Version 1.0.3 =
+* Pinterest added
+
 = Version 1.0.2 =
 * Fix for settings slug name that prevents creating/editing streams
 
@@ -125,6 +128,9 @@ Plugin is distributed "as is" and doesn't contain support services. However it c
 * initial release
 
 == Upgrade Notice ==
+
+= Version 1.0.3 =
+* Pinterest added
 
 = Version 1.0.2 =
 * Fix for settings slug name that prevents creating/editing streams

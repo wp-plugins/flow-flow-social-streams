@@ -17,113 +17,113 @@ screen_icon();
 
 
 <div id="fade-overlay" class="loading">
-	<i class="flaticon-settings"></i>
+    <i class="flaticon-settings"></i>
 </div>
 
 
 <!-- @TODO: Provide markup for your options page here. -->
 <form id="flow_flow_form" method="post" action="options.php" enctype="multipart/form-data">
 
-<!--Register settings-->
-<?php
-settings_fields('ff_opts');
-$options = FlowFlow::get_instance()->get_options();
-$auth = FlowFlow::get_instance()->get_auth_options();
-$arr = (array)$options['streams'];
-$count = count($arr);
-$feedsChanged = $options['feeds_changed'];
-$options['feeds_changed'] = ''; // init clear
+    <!--Register settings-->
+    <?php
+    settings_fields('ff_opts');
+    $options = FlowFlow::get_instance()->get_options();
+    $auth = FlowFlow::get_instance()->get_auth_options();
+    $arr = (array)$options['streams'];
+    $count = count($arr);
+    $feedsChanged = $options['feeds_changed'];
+    $options['feeds_changed'] = ''; // init clear
 
-//		FlowFlowAdmin::debug_to_console('OPTIONS');
-//		FlowFlowAdmin::debug_to_console($options);
+    //		FlowFlowAdmin::debug_to_console('OPTIONS');
+    //		FlowFlowAdmin::debug_to_console($options);
 
-?>
+    ?>
 
-<script>
-	var STREAMS = <?php echo json_encode($options["streams"])?>;
-	var _ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+    <script>
+        var STREAMS = <?php echo json_encode($options["streams"])?>;
+        var _ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
 
-</script>
-<input type="hidden" id="lastSubmit" name="flow_flow_options[last_submit]" value="<?php echo $options['last_submit'] ?>"/>
-<input type="hidden" id="feedsChanged" name="flow_flow_options[feeds_changed]" value="<?php echo $options['feeds_changed'] ?>"/>
-<div class="wrapper">
-<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
+    </script>
+    <input type="hidden" id="lastSubmit" name="flow_flow_options[last_submit]" value="<?php echo $options['last_submit'] ?>"/>
+    <input type="hidden" id="feedsChanged" name="flow_flow_options[feeds_changed]" value="<?php echo $options['feeds_changed'] ?>"/>
+    <div class="wrapper">
+        <h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
-<ul class="section-tabs">
-	<li id="streams-tab"><i class="flaticon-flow"></i> <span>Streams</span></li><li id="general-tab"><i class="flaticon-settings"></i> <span>Settings</span></li><li id="auth-tab"><i class="flaticon-user"></i> <span>Auth</span></li>
-</ul>
-<div class="section-contents">
-<div class="section-content" id="streams-cont" data-tab="streams-tab">
-<div class="section-stream" id="streams-list" data-view-mode="streams-list">
+        <ul class="section-tabs">
+            <li id="streams-tab"><i class="flaticon-flow"></i> <span>Streams</span></li><li id="general-tab"><i class="flaticon-settings"></i> <span>Settings</span></li><li id="auth-tab"><i class="flaticon-user"></i> <span>Auth</span></li>
+        </ul>
+        <div class="section-contents">
+            <div class="section-content" id="streams-cont" data-tab="streams-tab">
+                <div class="section-stream" id="streams-list" data-view-mode="streams-list">
 
-	<input type="hidden" id="streams" name="flow_flow_options[streams]" value=''/>
-	<input type="hidden" id="streams_count" name="flow_flow_options[streams_count]" value = "<?php echo $count ?>"/>
+                    <input type="hidden" id="streams" name="flow_flow_options[streams]" value=''/>
+                    <input type="hidden" id="streams_count" name="flow_flow_options[streams_count]" value = "<?php echo $count ?>"/>
 
-	<div class="section" id="streams-list">
-		<h1 class="desc-following"><span>List of your streams</span> <span class="admin-button green-button button-add">Add stream</span></h1>
-		<p class="desc">Here is a list of your streams. Edit them to change styling or to add/remove your social feeds.</p>
-		<table>
-			<thead>
-			<tr>
-				<th></th>
-				<th>Stream</th>
-				<th>Layout</th>
-				<th>Feeds</th>
-				<th>Shortcode</th>
-			</tr>
-			</thead>
-			<tbody>
-			<?php
+                    <div class="section" id="streams-list">
+                        <h1 class="desc-following"><span>List of your streams</span> <span class="admin-button green-button button-add">Add stream</span></h1>
+                        <p class="desc">Here is a list of your streams. Edit them to change styling or to add/remove your social feeds.</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Stream</th>
+                                    <th>Layout</th>
+                                    <th>Feeds</th>
+                                    <th>Shortcode</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
 
-			foreach ($options['streams'] as $key => $stream) {
+                                foreach ($options['streams'] as $key => $stream) {
 
-				if (!isset($stream->id)) continue;
+                                    if (!isset($stream->id)) continue;
 
-				$info = '';
+                                    $info = '';
 
-				$shortcodeStr = '[ff id="' . $stream->id . '"]';
+                                    $shortcodeStr = '[ff id="' . $stream->id . '"]';
 
-				if (isset($stream->feeds)) {
-					$feeds = json_decode($stream->feeds);
-					$length = count($feeds);
+                                    if (isset($stream->feeds)) {
+                                        $feeds = json_decode($stream->feeds);
+                                        $length = count($feeds);
 
-					for ($i = 0; $i < $length; $i++) {
-						$feed = $feeds[$i];
-						$info = $info . '<i class="flaticon-' . $feed->type . '"></i>';
-					}
-				}
+                                        for ($i = 0; $i < $length; $i++) {
+                                            $feed = $feeds[$i];
+                                            $info = $info . '<i class="flaticon-' . $feed->type . '"></i>';
+                                        }
+                                    }
 
 
-				echo
-					'<tr data-stream-id="' . $stream->id . '">
+                                    echo
+                                        '<tr data-stream-id="' . $stream->id . '">
 							      <td class="controls"><i class="flaticon-pen"></i> <i class="flaticon-copy"></i> <i class="flaticon-trash"></i></td>
 							      <td class="td-name">' . (!empty($stream->name) ? $stream->name : 'Unnamed') . '</td>
 							      <td class="td-type"><span class="icon-grid"></span></td>
 							      <td class="td-feed">' . (empty($info) ? '-' : $info) . '</td>
 							      <td><span class="shortcode">' . $shortcodeStr . '</span><span class="shortcode-copy">Copy to clipboard</span></td>
 						      </tr>';
-			}
+                                }
 
-			//$arr = (array)$options['streams'];
-			if (empty($arr)) {
-				echo '<tr><td class="empty-cell" colspan="5">Please add at least one stream</td></tr>';
-			}
+                                //$arr = (array)$options['streams'];
+                                if (empty($arr)) {
+                                    echo '<tr><td class="empty-cell" colspan="5">Please add at least one stream</td></tr>';
+                                }
 
-			?>
-			</tbody>
-		</table>
-	</div>
-	<div class="section">
-		<h1 class="desc-following"><span>Upgrade to PRO</span> <a target="_blank" href="http://codecanyon.net/item/flowflow-social-streams-for-wordpress/9319434?ref=looks_awesome" class="admin-button green-button button-upgrade">Upgrade</a></h1>
-		<p class="desc">Upgrade to remove this ad and use the benefits of Flow-Flow <strong>premium features</strong>.</p>
-		<a href="http://social-streams.com" target="_blank" class="features"></a>
-	</div>
-</div>
-<?php
-//
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="section">
+                        <h1 class="desc-following"><span>Upgrade to PRO</span> <a target="_blank" href="http://codecanyon.net/item/flowflow-social-streams-for-wordpress/9319434?ref=looks_awesome" class="admin-button green-button button-upgrade">Upgrade</a></h1>
+                        <p class="desc">Upgrade to remove this ad and use the benefits of Flow-Flow <strong>premium features</strong>.</p>
+                        <a href="http://social-streams.com" target="_blank" class="features"></a>
+                    </div>
+                </div>
+                <?php
+                //
 
-$templates = array(
-	'view' => '
+                $templates = array(
+                    'view' => '
 						<div class="section-stream" id="streams-update-%id%" data-view-mode="streams-update">
 							<input type="hidden" name="stream-%id%-id" class="stream-id-value" value="%id%"/>
 							<div class="section" id="stream-name-%id%">
@@ -156,6 +156,7 @@ $templates = array(
 												<li class="network-twitter" data-network="twitter" data-network-name="Twitter"><i class="flaticon-twitter"></i></li>
 												<li class="network-facebook" data-network="facebook" data-network-name="Facebook"><i class="flaticon-facebook"></i></li>
 												<li class="network-instagram" data-network="instagram" data-network-name="Instagram"><i class="flaticon-instagram"></i></li>
+												<li class="network-pinterest" data-network="pinterest" data-network-name="Pinterest"><i class="flaticon-pinterest"></i></li>
 											</ul>
 										</div>
 										<div class="networks-content  add-feed-step">
@@ -350,7 +351,7 @@ $templates = array(
 
 						</div>
 					',
-	'twitterView' => '
+                    'twitterView' => '
 						<div class="feed-view" data-feed-type="twitter" data-uid="%uid%">
 							<h1>Content settings for Twitter feed</h1>
 							<dl class="section-settings">
@@ -370,7 +371,7 @@ $templates = array(
 							</dl>
 						</div>
 					',
-	'facebookView' => '
+                    'facebookView' => '
 						<div class="feed-view"  data-feed-type="facebook" data-uid="%uid%">
 							<h1>Content settings for Facebook feed</h1>
 							<dl class="section-settings">
@@ -382,7 +383,7 @@ $templates = array(
 							</dl>
 						</div>
 					',
-	'instagramView' => '
+                    'instagramView' => '
 						<div class="feed-view" data-feed-type="instagram" data-uid="%uid%">
 							<h1>Content settings for Instagram feed</h1>
 							<dl class="section-settings">
@@ -393,142 +394,155 @@ $templates = array(
 								</dd>
 							</dl>
 						</div>
+					',
+                    'pinterestView' => '
+						<div class="feed-view" data-feed-type="pinterest" data-uid="%uid%">
+							<h1>Content settings for Pinterest feed</h1>
+							<dl class="section-settings">
+								<dt class="">Content to show</dt>
+								<dd class="">
+									<input type="text" name="%uid%-content" placeholder="What content to stream"/>
+									<p class="desc">e.g. <strong>elainen</strong> (for user feed) or <strong>elainen/cute-animals</strong> (for user board).</p>
+								</dd>
+							</dl>
+						</div>
 					'
-);
-?>
-<script>
-	var ff_templates = {
-		view: '<?php echo trim(preg_replace('/\s+/', ' ', $templates['view'])); ?>',
-		twitterView : '<?php echo trim(preg_replace('/\s+/', ' ', $templates['twitterView'])); ?>',
-		facebookView : '<?php echo trim(preg_replace('/\s+/', ' ', $templates['facebookView'])); ?>',
-		instagramView : '<?php echo trim(preg_replace('/\s+/', ' ', $templates['instagramView'])); ?>'
-	}
-</script>
-<?php
+                );
+                ?>
+                <script>
+                    var ff_templates = {
+                        view: '<?php echo trim(preg_replace('/\s+/', ' ', $templates['view'])); ?>',
+                        twitterView : '<?php echo trim(preg_replace('/\s+/', ' ', $templates['twitterView'])); ?>',
+                        facebookView : '<?php echo trim(preg_replace('/\s+/', ' ', $templates['facebookView'])); ?>',
+                        instagramView : '<?php echo trim(preg_replace('/\s+/', ' ', $templates['instagramView'])); ?>',
+                        pinterestView : '<?php echo trim(preg_replace('/\s+/', ' ', $templates['pinterestView'])); ?>'
+                    }
+                </script>
+                <?php
 
-?>
-</div>
-<div class="section-content" data-tab="general-tab">
-	<div class="section" id="general-settings">
-		<h1>General Settings</h1>
-		<dl class="section-settings">
-			<dt>Open links in new window</dt>
-			<dd>
-				<label for="general-settings-open-links-in-new-window">
-					<input id="general-settings-open-links-in-new-window" class="switcher clearcache" type="checkbox"
-					       name="flow_flow_options[general-settings-open-links-in-new-window]"
-						<?php if (!isset($options['general-settings-open-links-in-new-window']) || $options['general-settings-open-links-in-new-window'] == 'yep') echo "checked"; ?>
-					       value="yep"/><div><div></div></div>
-				</label>
-			</dd>
-			<dt class="multiline">Disable curl "follow location"
-			<p class="desc">Can help if your server uses deprecated security setting 'safe_mode' and streams don't load.</p></dt>
-			<dd>
-				<label for="general-settings-disable-follow-location">
-					<input id="general-settings-disable-follow-location" class="clearcache switcher" type="checkbox"
-					       name="flow_flow_options[general-settings-disable-follow-location]"
-						<?php if (!isset($options['general-settings-disable-follow-location']) || $options['general-settings-disable-follow-location'] == 'yep') echo "checked"; ?>
-					       value="yep"/><div><div></div></div>
-			</dd>
-			<dt class="multiline">Use IPv4 protocol
-			<p class="desc">Sometimes servers use older version of Internet protocol. Use setting when you see "Network is unreachable" error.</p></dt>
-			<dd>
-				<label for="general-settings-ipv4">
-					<input id="general-settings-ipv4" class="clearcache switcher" type="checkbox"
-					       name="flow_flow_options[general-settings-ipv4]"
-						<?php if (isset($options['general-settings-ipv4']) && $options['general-settings-ipv4'] == 'yep') echo "checked"; ?>
-					       value="yep"/><div><div></div></div>
-			</dd>
+                ?>
+            </div>
+            <div class="section-content" data-tab="general-tab">
+                <div class="section" id="general-settings">
+                    <h1>General Settings</h1>
+                    <dl class="section-settings">
+                        <dt>Open links in new window</dt>
+                        <dd>
+                            <label for="general-settings-open-links-in-new-window">
+                                <input id="general-settings-open-links-in-new-window" class="switcher clearcache" type="checkbox"
+                                       name="flow_flow_options[general-settings-open-links-in-new-window]"
+                                    <?php if (!isset($options['general-settings-open-links-in-new-window']) || $options['general-settings-open-links-in-new-window'] == 'yep') echo "checked"; ?>
+                                       value="yep"/><div><div></div></div>
+                            </label>
+                        </dd>
+                        <dt class="multiline">Disable curl "follow location"
+                        <p class="desc">Can help if your server uses deprecated security setting 'safe_mode' and streams don't load.</p></dt>
+                        <dd>
+                            <label for="general-settings-disable-follow-location">
+                                <input id="general-settings-disable-follow-location" class="clearcache switcher" type="checkbox"
+                                       name="flow_flow_options[general-settings-disable-follow-location]"
+                                    <?php if (!isset($options['general-settings-disable-follow-location']) || $options['general-settings-disable-follow-location'] == 'yep') echo "checked"; ?>
+                                       value="yep"/><div><div></div></div>
+                        </dd>
+                        <dt class="multiline">Use IPv4 protocol
+                        <p class="desc">Sometimes servers use older version of Internet protocol. Use setting when you see "Network is unreachable" error.</p></dt>
+                        <dd>
+                            <label for="general-settings-ipv4">
+                                <input id="general-settings-ipv4" class="clearcache switcher" type="checkbox"
+                                       name="flow_flow_options[general-settings-ipv4]"
+                                    <?php if (isset($options['general-settings-ipv4']) && $options['general-settings-ipv4'] == 'yep') echo "checked"; ?>
+                                       value="yep"/><div><div></div></div>
+                        </dd>
 
-			<dt class="multiline">Force HTTPS for all resources
-			<p class="desc">For images and videos to load via HTTPS. Use this settings if you have HTTPS site and see browser security warnings. Keep in mind that this is forcing and not all resources can be available via HTTPS</p></dt>
-			<dd>
-				<label for="general-settings-https">
-					<input id="general-settings-https" class="clearcache switcher" type="checkbox"
-					       name="flow_flow_options[general-settings-https]"
-						<?php if (isset($options['general-settings-https']) && $options['general-settings-https'] == 'yep') echo "checked"; ?>
-					       value="yep"/><div><div></div></div>
-			</dd>
-		</dl>
-		<span id="general-settings-sbmt" class='admin-button green-button submit-button'>Save Changes</span>
-	</div>
-	<div class="section">
-		<h1 class="desc-following"><span>Upgrade to PRO</span> <a target="_blank" href="http://codecanyon.net/item/flowflow-social-streams-for-wordpress/9319434?ref=looks_awesome" class="admin-button green-button button-upgrade">Upgrade</a></h1>
-		<p class="desc">Upgrade to remove this ad and use the benefits of Flow-Flow <strong>premium features</strong>.</p>
-		<a href="http://social-streams.com" target="_blank" class="features"></a>
-		</table>
-	</div>
-</div>
-<div class="section-content" data-tab="auth-tab">
-	<div class="section" id="auth-settings">
-		<h1 class="desc-following">Twitter auth settings</h1>
-		<p class="desc">Valid for all (public) twitter accounts. You need to authenticate one (and any) twitter account here. <a target="_blank" href="http://flow.looks-awesome.com/docs/Setup/Authenticate_with_Twitter">Follow setup guide</a></p>
-		<dl class="section-settings">
-			<dt class="vert-aligned">Consumer Key (API Key)</dt>
-			<dd>
-				<input class="clearcache" type="text" name="flow_flow_options[consumer_key]" placeholder="Copy and paste from Twitter" value="<?php echo $options['consumer_key']?>"/>
-			</dd>
-			<dt class="vert-aligned">Consumer Secret (API Secret)</dt>
-			<dd>
-				<input class="clearcache" type="text" name="flow_flow_options[consumer_secret]" placeholder="Copy and paste from Twitter" value="<?php echo $options['consumer_secret']?>"/>
-			</dd>
-			<dt class="vert-aligned">Access Token</dt>
-			<dd>
-				<input class="clearcache" type="text" name="flow_flow_options[oauth_access_token]" placeholder="Copy and paste from Twitter" value="<?php echo $options['oauth_access_token']?>"/>
-			</dd>
-			<dt class="vert-aligned">Access Token Secret</dt>
-			<dd>
-				<input class="clearcache" type="text" name="flow_flow_options[oauth_access_token_secret]" placeholder="Copy and paste from Twitter" value="<?php echo $options['oauth_access_token_secret']?>"/>						</dd>
+                        <dt class="multiline">Force HTTPS for all resources
+                        <p class="desc">For images and videos to load via HTTPS. Use this settings if you have HTTPS site and see browser security warnings. Keep in mind that this is forcing and not all resources can be available via HTTPS</p></dt>
+                        <dd>
+                            <label for="general-settings-https">
+                                <input id="general-settings-https" class="clearcache switcher" type="checkbox"
+                                       name="flow_flow_options[general-settings-https]"
+                                    <?php if (isset($options['general-settings-https']) && $options['general-settings-https'] == 'yep') echo "checked"; ?>
+                                       value="yep"/><div><div></div></div>
+                        </dd>
+                    </dl>
+                    <span id="general-settings-sbmt" class='admin-button green-button submit-button'>Save Changes</span>
+                </div>
+                <div class="section">
+                    <h1 class="desc-following"><span>Upgrade to PRO</span> <a target="_blank" href="http://codecanyon.net/item/flowflow-social-streams-for-wordpress/9319434?ref=looks_awesome" class="admin-button green-button button-upgrade">Upgrade</a></h1>
+                    <p class="desc">Upgrade to remove this ad and use the benefits of Flow-Flow <strong>premium features</strong>.</p>
+                    <a href="http://social-streams.com" target="_blank" class="features"></a>
+                    </table>
+                </div>
+            </div>
+            <div class="section-content" data-tab="auth-tab">
+                <div class="section" id="auth-settings">
+                    <h1 class="desc-following">Twitter auth settings</h1>
+                    <p class="desc">Valid for all (public) twitter accounts. You need to authenticate one (and any) twitter account here. <a target="_blank" href="http://flow.looks-awesome.com/docs/Setup/Authenticate_with_Twitter">Follow setup guide</a></p>
+                    <dl class="section-settings">
+                        <dt class="vert-aligned">Consumer Key (API Key)</dt>
+                        <dd>
+                            <input class="clearcache" type="text" name="flow_flow_options[consumer_key]" placeholder="Copy and paste from Twitter" value="<?php echo $options['consumer_key']?>"/>
+                        </dd>
+                        <dt class="vert-aligned">Consumer Secret (API Secret)</dt>
+                        <dd>
+                            <input class="clearcache" type="text" name="flow_flow_options[consumer_secret]" placeholder="Copy and paste from Twitter" value="<?php echo $options['consumer_secret']?>"/>
+                        </dd>
+                        <dt class="vert-aligned">Access Token</dt>
+                        <dd>
+                            <input class="clearcache" type="text" name="flow_flow_options[oauth_access_token]" placeholder="Copy and paste from Twitter" value="<?php echo $options['oauth_access_token']?>"/>
+                        </dd>
+                        <dt class="vert-aligned">Access Token Secret</dt>
+                        <dd>
+                            <input class="clearcache" type="text" name="flow_flow_options[oauth_access_token_secret]" placeholder="Copy and paste from Twitter" value="<?php echo $options['oauth_access_token_secret']?>"/>						</dd>
 
-		</dl>
-		<p class="button-wrapper"><span id="tw-auth-settings-sbmt" class='admin-button green-button submit-button'>Save Changes</span></p>
+                    </dl>
+                    <p class="button-wrapper"><span id="tw-auth-settings-sbmt" class='admin-button green-button submit-button'>Save Changes</span></p>
 
-		<h1  class="desc-following">Facebook auth settings</h1>
-		<p class="desc">Valid to pull any public FB page. <a target="_blank" href="http://flow.looks-awesome.com/docs/Setup/Authenticate_with_Facebook">Follow setup guide</a></p>
-		<dl class="section-settings">
-			<dt class="vert-aligned">Access Token</dt>
-			<dd>
-				<input class="clearcache" type="text" name="flow_flow_fb_auth_options[facebook_access_token]" placeholder="Copy and paste from Facebook" value="<?php echo $auth['facebook_access_token']?>"/>
-				<?php
-					$extended = get_transient(FlowFlow::$PLUGIN_SLUG_DOWN . '_facebook_access_token');
-					if(!empty($auth['facebook_access_token']) && !empty($extended) ) {
-						echo '<p class="desc" style="margin: 10px 0 5px">Generated long-life token, it should be different from that you entered above then FB auth is OK</p><textarea disabled rows=3>' .get_transient(FlowFlow::$PLUGIN_SLUG_DOWN . '_facebook_access_token') . '</textarea>';
-					}
-				?>
-			</dd>
-			<dt class="vert-aligned">APP ID</dt>
-			<dd>
-				<input class="clearcache" type="text" name="flow_flow_fb_auth_options[facebook_app_id]" placeholder="Copy and paste from Facebook" value="<?php echo $auth['facebook_app_id']?>"/>
-			</dd>
-			<dt class="vert-aligned">APP Secret</dt>
-			<dd>
-				<input class="clearcache" type="text" name="flow_flow_fb_auth_options[facebook_app_secret]" placeholder="Copy and paste from Facebook" value="<?php echo $auth['facebook_app_secret']?>"/>
-			</dd>
-		</dl>
-		<p class="button-wrapper"><span id="fb-auth-settings-sbmt" class='admin-button green-button submit-button'>Save Changes</span></p>
+                    <h1  class="desc-following">Facebook auth settings</h1>
+                    <p class="desc">Valid to pull any public FB page. <a target="_blank" href="http://flow.looks-awesome.com/docs/Setup/Authenticate_with_Facebook">Follow setup guide</a></p>
+                    <dl class="section-settings">
+                        <dt class="vert-aligned">Access Token</dt>
+                        <dd>
+                            <input class="clearcache" type="text" name="flow_flow_fb_auth_options[facebook_access_token]" placeholder="Copy and paste from Facebook" value="<?php echo $auth['facebook_access_token']?>"/>
+                            <?php
+                            $extended = get_transient(FlowFlow::$PLUGIN_SLUG_DOWN . '_facebook_access_token');
+                            if(!empty($auth['facebook_access_token']) && !empty($extended) ) {
+                                echo '<p class="desc" style="margin: 10px 0 5px">Generated long-life token, it should be different from that you entered above then FB auth is OK</p><textarea disabled rows=3>' .get_transient(FlowFlow::$PLUGIN_SLUG_DOWN . '_facebook_access_token') . '</textarea>';
+                            }
+                            ?>
+                        </dd>
+                        <dt class="vert-aligned">APP ID</dt>
+                        <dd>
+                            <input class="clearcache" type="text" name="flow_flow_fb_auth_options[facebook_app_id]" placeholder="Copy and paste from Facebook" value="<?php echo $auth['facebook_app_id']?>"/>
+                        </dd>
+                        <dt class="vert-aligned">APP Secret</dt>
+                        <dd>
+                            <input class="clearcache" type="text" name="flow_flow_fb_auth_options[facebook_app_secret]" placeholder="Copy and paste from Facebook" value="<?php echo $auth['facebook_app_secret']?>"/>
+                        </dd>
+                    </dl>
+                    <p class="button-wrapper"><span id="fb-auth-settings-sbmt" class='admin-button green-button submit-button'>Save Changes</span></p>
 
 
-		<h1 class="desc-following">Instagram auth settings</h1>
-		<p class="desc">Valid to pull any public Instagram account feed or valid search term. <a target="_blank" href="http://flow.looks-awesome.com/docs/Setup/Authenticate_with_Instagram">Follow setup guide</a></p>
-		<dl class="section-settings">
-			<dt class="vert-aligned">Access Token</dt>
-			<dd>
-				<input class="clearcache" type="text" name="flow_flow_options[instagram_access_token]" placeholder="Copy and paste from Instagram" value="<?php echo $options['instagram_access_token']?>"/>
-			</dd>
-		</dl>
-		<p class="button-wrapper"><span id="inst-auth-settings-sbmt" class='admin-button green-button submit-button'>Save Changes</span></p>
-	</div>
-	<div class="section">
-		<h1 class="desc-following"><span>Upgrade to PRO</span> <a target="_blank" href="http://codecanyon.net/item/flowflow-social-streams-for-wordpress/9319434?ref=looks_awesome" class="admin-button green-button button-upgrade">Upgrade</a></h1>
-		<p class="desc">Upgrade to remove this ad and use the benefits of Flow-Flow <strong>premium features</strong>.</p>
-		<a href="http://social-streams.com" target="_blank" class="features"></a>
-		</table>
-	</div>
-</div>
-</div>
-<div id="la">Made with love by <a  target="_blank" href="http://looks-awesome.com">Looks Awesome</a></div>
-<div id="social-links"><a target="_blank" class="sl-tw flaticon-twitter" href="https://twitter.com/looks_awesooome"></a><a  target="_blank" class="sl-fb flaticon-facebook" href="https://www.facebook.com/looksawesooome"></a><a  target="_blank" class="sl-gp flaticon-google" href="https://plus.google.com/+Looksawesomeee/posts"></a></div>
-</div>
+                    <h1 class="desc-following">Instagram auth settings</h1>
+                    <p class="desc">Valid to pull any public Instagram account feed or valid search term. <a target="_blank" href="http://flow.looks-awesome.com/docs/Setup/Authenticate_with_Instagram">Follow setup guide</a></p>
+                    <dl class="section-settings">
+                        <dt class="vert-aligned">Access Token</dt>
+                        <dd>
+                            <input class="clearcache" type="text" name="flow_flow_options[instagram_access_token]" placeholder="Copy and paste from Instagram" value="<?php echo $options['instagram_access_token']?>"/>
+                        </dd>
+                    </dl>
+                    <p class="button-wrapper"><span id="inst-auth-settings-sbmt" class='admin-button green-button submit-button'>Save Changes</span></p>
+                </div>
+                <div class="section">
+                    <h1 class="desc-following"><span>Upgrade to PRO</span> <a target="_blank" href="http://codecanyon.net/item/flowflow-social-streams-for-wordpress/9319434?ref=looks_awesome" class="admin-button green-button button-upgrade">Upgrade</a></h1>
+                    <p class="desc">Upgrade to remove this ad and use the benefits of Flow-Flow <strong>premium features</strong>.</p>
+                    <a href="http://social-streams.com" target="_blank" class="features"></a>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="la">Made with love by <a  target="_blank" href="http://looks-awesome.com">Looks Awesome</a></div>
+        <div id="social-links"><a target="_blank" class="sl-tw flaticon-twitter" href="https://twitter.com/looks_awesooome"></a><a  target="_blank" class="sl-fb flaticon-facebook" href="https://www.facebook.com/looksawesooome"></a><a  target="_blank" class="sl-gp flaticon-google" href="https://plus.google.com/+Looksawesomeee/posts"></a></div>
+    </div>
 
 </form>
 <script>jQuery(document).trigger('html_ready')</script>

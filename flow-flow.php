@@ -10,7 +10,7 @@
  * Plugin Name:       Flow-Flow Social Streams (Free)
  * Plugin URI:        flow.looks-awesome.com
  * Description:       Awesome social streams on your site
- * Version:           1.0.2
+ * Version:           1.0.3
  * Author:            Looks Awesome
  * Author URI:        looks-awesome.com
  * Text Domain:       flow-flow
