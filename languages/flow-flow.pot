@@ -1,0 +1,130 @@
+# Copyright (C) 2015 Looks Awesome
+# This file is distributed under the same license as the Flow-Flow Social Streams (Free) package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Flow-Flow Social Streams (Free) 1.0.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/flow-flow\n"
+"POT-Creation-Date: 2015-07-20 15:46:21+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Team Name <team@example.com>\n"
+"X-Generator: grunt-wp-i18n 0.4.9\n"
+
+#: includes/FlowFlow.php:386
+msgid "All"
+msgstr ""
+
+#: includes/FlowFlow.php:387
+msgid "Search"
+msgstr ""
+
+#: includes/FlowFlow.php:388
+msgid "Expand"
+msgstr ""
+
+#: includes/FlowFlow.php:389
+msgid "Collapse"
+msgstr ""
+
+#: includes/FlowFlow.php:390
+msgid "Posted on"
+msgstr ""
+
+#: includes/FlowFlow.php:391
+msgid "Show more"
+msgstr ""
+
+#: includes/FlowFlow.php:393
+msgid "Yesterday"
+msgstr ""
+
+#: includes/FlowFlow.php:394
+msgid "s"
+msgstr ""
+
+#: includes/FlowFlow.php:395
+msgid "m"
+msgstr ""
+
+#: includes/FlowFlow.php:396
+msgid "h"
+msgstr ""
+
+#: includes/FlowFlow.php:397
+msgid "ago"
+msgstr ""
+
+#: includes/FlowFlow.php:399
+msgid "Jan"
+msgstr ""
+
+#: includes/FlowFlow.php:399
+msgid "Feb"
+msgstr ""
+
+#: includes/FlowFlow.php:399
+msgid "March"
+msgstr ""
+
+#: includes/FlowFlow.php:400
+msgid "April"
+msgstr ""
+
+#: includes/FlowFlow.php:400
+msgid "May"
+msgstr ""
+
+#: includes/FlowFlow.php:400
+msgid "June"
+msgstr ""
+
+#: includes/FlowFlow.php:401
+msgid "July"
+msgstr ""
+
+#: includes/FlowFlow.php:401
+msgid "Aug"
+msgstr ""
+
+#: includes/FlowFlow.php:401
+msgid "Sept"
+msgstr ""
+
+#: includes/FlowFlow.php:402
+msgid "Oct"
+msgstr ""
+
+#: includes/FlowFlow.php:402
+msgid "Nov"
+msgstr ""
+
+#: includes/FlowFlow.php:402
+msgid "Dec"
+msgstr ""
+
+#: includes/FlowFlow.php:405
+msgid "Navigate with arrow keys"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Flow-Flow Social Streams (Free)"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "flow.looks-awesome.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Awesome social streams on your site"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Looks Awesome"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "looks-awesome.com"
+msgstr ""
