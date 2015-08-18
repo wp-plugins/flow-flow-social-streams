@@ -38,6 +38,7 @@ Upgrade to PRO! [Check out comparison table](http://www.social-streams.com#prici
 * Well documented
 
 = PRO version features =
+* Posts approval system
 * Support services
 * More feeds to stream (total 14 networks including YouTube, Linkedin, Tumblr, Soundcloud, Vine, Dribbble, Flickr etc plus WordPress posts and RSS feeds)
 * Lot more layouts and design options
@@ -49,7 +50,6 @@ Upgrade to PRO! [Check out comparison table](http://www.social-streams.com#prici
 * Filters for networks on top of grid   
 * Searching by words in grid content
 * Database snapshots
-* Admin posts approval system (soon!)
 
 Upgrade to PRO! [Check out comparison table](http://www.social-streams.com#pricing "Flow-Flow demo")
 
