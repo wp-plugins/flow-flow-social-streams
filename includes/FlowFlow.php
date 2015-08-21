@@ -35,7 +35,7 @@ class FlowFlow {
      *
      * @var     string
      */
-    const VERSION = '1.0.3';
+    const VERSION = '1.0.4';
 
     /**
      *
@@ -50,8 +50,8 @@ class FlowFlow {
      *
      * @var      string
      */
-    public static $PLUGIN_SLUG = 'flow-flow';
-    public static $PLUGIN_SLUG_DOWN = 'flow_flow';
+    public static $PLUGIN_SLUG = 'flow-flow-social-streams';
+    public static $PLUGIN_SLUG_DOWN = 'flow_flow_social_streams';
 
     protected static $instance = null;
     /** @return FlowFlow|null */
@@ -416,8 +416,8 @@ class FlowFlow {
     }
 
     public function register_settings() {
-        $option_name = self::$PLUGIN_SLUG_DOWN . '_options';
-        $fb_auth_option_name = self::$PLUGIN_SLUG_DOWN . '_fb_auth_options';
+        $option_name = 'flow_flow_options';
+        $fb_auth_option_name = 'flow_flow_fb_auth_options';
         register_setting( 'ff_opts', $option_name, array($this, 'validate_options'));
         register_setting( 'ff_opts', $fb_auth_option_name, array($this, 'validate_options'));
 
@@ -441,7 +441,7 @@ class FlowFlow {
     }
 
     public function get_options() {
-        $options = get_option(self::$PLUGIN_SLUG_DOWN . '_options');
+        $options = get_option('flow_flow_options');
         if ($options == NULL) $options = array();
         $options = $this->setDefaultValueIfNeeded($options);
 
@@ -457,7 +457,7 @@ class FlowFlow {
     }
 
     public function get_auth_options() {
-        $options = get_option(self::$PLUGIN_SLUG_DOWN . '_fb_auth_options');
+        $options = get_option('flow_flow_fb_auth_options');
         if ($options == NULL) $options = array();
         if (!isset($options['facebook_access_token'])) $options['facebook_access_token'] = '';
         if (!isset($options['facebook_app_id'])) $options['facebook_app_id'] = '';
