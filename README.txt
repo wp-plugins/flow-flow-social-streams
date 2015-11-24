@@ -5,7 +5,7 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: ajax, facebook, facebook feed, pinterest, pinterest feed, facebook posts, grid, hashtag, instagram feed, instagram posts, social, social board, social feed, social grid, social hub, social wall, social stream, stream, twitter, twitter feed, tweets, masonry grid
 Requires at least: 3.6
-Tested up to: 4.2.3
+Tested up to: 4.3.1
 Stable tag: 1.0.4
 
 With Flow-Flow Social Streams you can display your social hub in awesome responsive grid.
